@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6145.236 892.831 18.183 27.938">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d35400;
+      }
+    </style>
+  </defs>
+  <g id="electricityIcon" transform="translate(-6145.237 892.831)">
+    <g id="Group_1434" data-name="Group 1434" transform="translate(0)">
+      <g id="Group_1433" data-name="Group 1433" transform="translate(0)">
+        <path id="Path_1387" data-name="Path 1387" class="cls-1" d="M101.23,3.093A9.1,9.1,0,1,0,87.575,15.135a9.686,9.686,0,0,0,.766.766A3.447,3.447,0,0,1,89.7,18.646l-.011,1.069a1.032,1.032,0,0,0,1.018,1.041h.011a1.026,1.026,0,0,0,1.029-1.018l.011-1.069v-.006a5.454,5.454,0,0,0-2.047-4.294,8.332,8.332,0,0,1-.595-.595,7.045,7.045,0,1,1,10.567-.017,7.647,7.647,0,0,1-.606.612,5.433,5.433,0,0,0-2.03,4.237l-.011,1.121a1.032,1.032,0,0,0,1.018,1.041h.011A1.026,1.026,0,0,0,99.1,19.75l.011-1.121c-.006-.017-.006-.017,0-.023a3.391,3.391,0,0,1,1.344-2.71,10.05,10.05,0,0,0,.778-.783,9.142,9.142,0,0,0,0-12.019Z" transform="translate(-85.299)"/>
+      </g>
+    </g>
+    <g id="Group_1436" data-name="Group 1436" transform="translate(4.391 22.477)">
+      <g id="Group_1435" data-name="Group 1435" transform="translate(0)">
+        <path id="Path_1388" data-name="Path 1388" class="cls-1" d="M170.471,393.1h-7.342a1.029,1.029,0,1,0,0,2.058h7.348a1.029,1.029,0,0,0-.006-2.058Z" transform="translate(-162.1 -393.1)"/>
+      </g>
+    </g>
+    <g id="Group_1438" data-name="Group 1438" transform="translate(6.078 25.879)">
+      <g id="Group_1437" data-name="Group 1437" transform="translate(0)">
+        <path id="Path_1389" data-name="Path 1389" class="cls-1" d="M196.592,452.6h-3.963a1.029,1.029,0,0,0,0,2.059h3.963a1.029,1.029,0,0,0,0-2.059Z" transform="translate(-191.6 -452.6)"/>
+      </g>
+    </g>
+    <g id="Group_1440" data-name="Group 1440" transform="translate(5.218 8.929)">
+      <g id="Group_1439" data-name="Group 1439" transform="translate(0)">
+        <path id="Path_1390" data-name="Path 1390" class="cls-1" d="M181.15,159.292l-2.842-2.842a1.031,1.031,0,0,0-1.458,1.458l2.545,2.539v6.5a1.029,1.029,0,1,0,2.058,0V160.1A1.092,1.092,0,0,0,181.15,159.292Z" transform="translate(-176.55 -156.15)"/>
+      </g>
+    </g>
+    <g id="Group_1442" data-name="Group 1442" transform="translate(10.364 8.923)">
+      <g id="Group_1441" data-name="Group 1441" transform="translate(0)">
+        <path id="Path_1391" data-name="Path 1391" class="cls-1" d="M268.852,156.35a1.035,1.035,0,0,0-1.458,0l-.543.543a1.031,1.031,0,1,0,1.458,1.458l.543-.543A1.035,1.035,0,0,0,268.852,156.35Z" transform="translate(-266.55 -156.05)"/>
+      </g>
+    </g>
+  </g>
+</svg>

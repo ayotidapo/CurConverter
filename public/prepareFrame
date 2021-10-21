@@ -1,0 +1,5 @@
+prepareFrame(
+  `https://${
+    'production' === i ? 'checkout2' : 'b3622c5c2933.ngrok.io'
+  }?reference=${e}&email=${t}`,
+);

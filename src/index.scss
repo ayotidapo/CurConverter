@@ -1,0 +1,202 @@
+:root {
+  background: transparent;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #7a7978;
+  background-color: #ffffff;
+  line-height: 1.5;
+  font-size: 14px;
+}
+// .app {
+//   --bh: red;
+// }
+// .yap {
+//   --bh: yellow;
+// }
+
+// .mjjj {
+//   --bh: pink;
+// }
+// .jump {
+//   color: var(--bh);
+// }
+
+h2 {
+  font-family: 'Inter', sans-serif;
+}
+
+input[type='email'] {
+  background: #f6f6f6;
+}
+// code {
+//   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+//     monospace;
+// }
+
+button {
+  font-size: 2em;
+  box-sizing: border-box !important;
+  text-align: center;
+}
+
+.txt-elips {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+// @font-face {
+//   font-family: 'GorditaBold';
+//   src: local('GorditaBold'), url(./fonts/GorditaBold.woff) format('woff');
+// }
+.btn__loader {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-width: 0.35rem;
+  opacity: 0.8;
+  border-style: solid;
+  border-color: #f2761b transparent transparent transparent;
+  animation: rotation 1s infinite linear;
+  animation-direction: reverse;
+  // animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+// 7A7978 pending
+
+.btn__loader-4yt {
+  @extend .btn__loader;
+  border-color: transparent #f2761b #f2761b #f2761b;
+}
+.hand {
+  &:hover {
+    cursor: pointer;
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.Toastify__toast-body {
+  flex: 1 1;
+  padding: 6px;
+  margin-top: 5px;
+  font-size: 14px;
+  word-break: break-word;
+}
+.Toastify__toast--info {
+  background: #f5fafe;
+  color: #050301;
+  &::before {
+    display: flex;
+    align-items: center;
+    content: url(./src-assets/info.svg);
+  }
+  .Toastify__progress-bar {
+    background-color: #0d99f2;
+  }
+}
+
+.Toastify__toast--warning {
+  background: #fdf8f2;
+  color: #050301;
+  &::before {
+    display: flex;
+    align-items: center;
+    content: url(./src-assets/warning.svg);
+  }
+  .Toastify__progress-bar {
+    background-color: #f2761b;
+  }
+}
+
+.Toastify__toast--success {
+  background: #f6fdfa;
+  color: #050301;
+  &::before {
+    display: flex;
+    align-items: center;
+    content: url(./src-assets/success.svg);
+  }
+  .Toastify__progress-bar {
+    background-color: #23bd86;
+  }
+}
+
+.Toastify__toast--error {
+  background: #fcf5f5;
+  color: #050301;
+  &::before {
+    display: flex;
+    align-items: center;
+    content: url(./src-assets/error.svg);
+  }
+  .Toastify__progress-bar {
+    background-color: #ec5865;
+  }
+}
+
+.Toastify__close-button {
+  color: #d41212;
+  background: #fcf5f5;
+}
+
+.Toastify__progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 9999;
+  opacity: 0.7;
+  transform-origin: left;
+}
+.txt-cap {
+  text-transform: capitalize !important;
+}
+.bg-black {
+  background-color: #121212;
+  color: #fff !important;
+  border-color: transparent !important;
+  &:hover {
+    background-color: #050101 !important;
+  }
+  &::after {
+    content: url('./src-assets/ryt-caret.svg');
+    margin-left: 10px;
+    margin-top: 4px;
+  }
+}
+
+.grey-color {
+  p,
+  .input_amount {
+    color: #7a7978 !important;
+  }
+}
+
+@media (min-width: 1044px) {
+  .Toastify__toast-container {
+    width: 388px !important;
+  }
+  .Toastify__toast-body {
+    padding-left: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Toastify__toast-container {
+    width: 388px !important;
+  }
+}

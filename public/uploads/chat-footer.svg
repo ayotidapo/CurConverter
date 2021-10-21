@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-5407 3948 160.53 69.393">
+  <defs>
+    <style>
+      .cls-1, .cls-6 {
+        fill: #e7e7e7;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #151515;
+      }
+
+      .cls-2 {
+        font-size: 8px;
+        font-family: Avenir-Heavy, Avenir;
+        font-weight: 800;
+        opacity: 0.97;
+      }
+
+      .cls-3 {
+        font-size: 16.5px;
+        font-family: Avenir-Medium, Avenir;
+        font-weight: 500;
+      }
+
+      .cls-4, .cls-5 {
+        fill: #222;
+      }
+
+      .cls-4 {
+        stroke: #222;
+        stroke-width: 1.1px;
+      }
+
+      .cls-6 {
+        stroke: #e7e7e7;
+      }
+
+      .cls-7 {
+        stroke: none;
+      }
+
+      .cls-8 {
+        fill: none;
+      }
+
+      .cls-9 {
+        filter: url(#Rectangle_77);
+      }
+    </style>
+    <filter id="Rectangle_77" x="-5407" y="3948" width="160.53" height="69.393" filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_3142" data-name="Group 3142" transform="translate(-6959 3006)">
+    <g class="cls-9" transform="matrix(1, 0, 0, 1, 6959, -3006)">
+      <rect id="Rectangle_77-2" data-name="Rectangle 77" class="cls-1" width="136.53" height="45.392" rx="5" transform="translate(-5395 3955)"/>
+    </g>
+    <g id="Group_133" data-name="Group 133" transform="translate(1578.57 958.406)">
+      <text id="NEED_HELP_" data-name="NEED HELP?" class="cls-2" transform="translate(27.866 5)"><tspan x="0" y="0">NEED HELP?</tspan></text>
+      <text id="Chat_Now_" data-name="Chat Now!" class="cls-3" transform="translate(26.866 22)"><tspan x="0" y="0">Chat Now!</tspan></text>
+      <g id="Group_3143" data-name="Group 3143" transform="translate(-2.029 4.939)">
+        <path id="Path_1397" data-name="Path 1397" class="cls-4" d="M18.152,0H2.017A2.008,2.008,0,0,0,.01,2.017L0,20.169l4.034-4.034H18.152a2.016,2.016,0,0,0,2.017-2.017V2.017A2.016,2.016,0,0,0,18.152,0ZM11.093,12.1H9.076V10.085h2.017V12.1Zm0-4.034H9.076V4.034h2.017V8.068Z"/>
+        <rect id="Rectangle_1870" data-name="Rectangle 1870" class="cls-5" width="4.22" height="11.254" transform="translate(7.949 1.899)"/>
+      </g>
+      <g id="Ellipse_489" data-name="Ellipse 489" class="cls-6" transform="translate(4.43 11.594)">
+        <circle class="cls-7" cx="1" cy="1" r="1"/>
+        <circle class="cls-8" cx="1" cy="1" r="0.5"/>
+      </g>
+      <g id="Ellipse_490" data-name="Ellipse 490" class="cls-6" transform="translate(7.43 11.594)">
+        <circle class="cls-7" cx="1" cy="1" r="1"/>
+        <circle class="cls-8" cx="1" cy="1" r="0.5"/>
+      </g>
+      <g id="Ellipse_491" data-name="Ellipse 491" class="cls-6" transform="translate(10.43 11.594)">
+        <circle class="cls-7" cx="1" cy="1" r="1"/>
+        <circle class="cls-8" cx="1" cy="1" r="0.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

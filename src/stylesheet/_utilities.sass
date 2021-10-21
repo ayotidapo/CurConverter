@@ -1,0 +1,311 @@
+// 
+    // Trumps/Utilities
+
+    // @package eyw
+    // @author  Tonye Dickson <itztonye@gmail.com>
+
+// Positioning
+
+
+.absolute-zero
+    position:           absolute
+    top:                0
+    right:              0
+    bottom:             0
+    left:               0
+.fixed-zero
+    position:           fixed
+    top:                0
+    right:              0
+    bottom:             0
+    left:               0
+.absolute-middle
+    position:           absolute
+    top:                50%
+    left:               50%
+    transform:          translate( -50%, -50% )
+.absolute-bottom-right
+    position:           absolute
+    right:              0
+    bottom:             0
+.absolute-top-right
+    position:           absolute
+    right:              0
+    top:             0
+.abs-tr-centre-20
+    position:           absolute
+    right:              20px
+    top:             50%
+    transform:          translateY(-50%)
+.pos-f
+    position:           fixed
+    &.fixed-to-top
+        top:            0
+        right:          0
+        left:           0
+.pos-a
+    position:           absolute
+.pos-r
+    position:           relative
+
+.v-align
+    vertical-align: middle
+
+%abs-after-content
+    content:            ''
+    display:            inline-block
+    position:           absolute
+
+// global calls
+
+$media: ( "&-sm": $smalldown, "&-md": $mediumdown, "&-lg": $largedown )
+
+$breakp: ( "&-sm": small, "&-md": medium, "&-lg": large )
+
+$breakpoin: ( "-lg": $largedown, "-md": $mediumdown, "-sm": $smalldown  )
+
+$dirctn: ("t": "top", "b": "bottom", "l": "left", "r": "right")
+
+@mixin elements($props, $value)
+    #{$props}: $value
+
+// display
+// $display: ("blk": block, "flx": flex, "iblk": inline-block, "iflx": inline-flex, "none": none)
+
+
+.mx-auto
+    margin-right:       auto
+    margin-left:        auto
+
+//margin and padding
+@mixin mar-pad($ref, $abbr, $dir, $sizeName)
+    $space: ''
+    @if $ref == "p"
+        $space: 'padding'
+    @else 
+        $space: 'margin'
+    @for $i from 0 through 20
+        $num:  $i * 0.5rem
+        $type: ""
+
+        @if $abbr == "t" or $abbr == "b"
+            $type: "y-#{$i * 5}#{$sizeName}"
+        @else if $abbr == "l" or $abbr == "r"
+            $type: "x-#{$i * 5}#{$sizeName}"
+        
+
+        .#{$ref + $abbr}-#{$i * 5}#{$sizeName},  .#{$ref + $type}, .#{$ref}-#{$i * 5}#{$sizeName}
+            @include elements(#{$space}-#{$dir}, $num)
+
+//border
+@mixin borders($abbr, $dir, $sizeName )
+    @for $i from 0 through 1
+        $num:  $i * 1px
+        @if $i == 0
+            $i: none
+
+        .bd-#{$abbr}-#{$i}#{$sizeName}, .bd-#{$i}#{$sizeName}
+            @if $i == 0
+                @include elements(border-#{$dir}, none)
+            @else 
+                @include elements(border-#{$dir}, $num solid $bordercolor)
+
+@each $abbr, $dir in $dirctn
+    //margin and padding
+    @include mar-pad(m, $abbr, $dir, '')
+    @include mar-pad(p, $abbr, $dir, '')
+
+    // borders
+    @include borders($abbr, $dir, '' )
+
+
+//displays
+
+$displayoptions: (display, align-items, align-self, justify-content, flex-direction, flex-wrap, font-size, flex-grid, position, min-height, max-width, width, flex, z-index, gutter)
+@mixin displays($option, $sizeName)
+    $display: ("blk": block, "flx": flex, "iblk": inline-block, "iflx": inline-flex, "none": none)
+    $alignItem: (c: center, fs: flex-start, fe: flex-end, b: baseline, s: stretch)
+    $alignSelf: (a: auto, c: center, b: baseline, fe: flex-end, fs: flex-start, n: normal, r: reverse, se: self-end, ss: self-start, s: stretch)
+    $justifyContent: (c: center, fs: flex-start, fe: flex-end, sb: space-between, sa: space-around, se: space-evenly)
+    $flexDirection: (row: row, row-r: row-reverse, col: column, col-r: column-reverse)
+    $flexWrap: (w: wrap, nw: nowrap, wr: wrap-reverse)
+    $position: (r: relative, a: absolute, f: fixed)
+    $minHeight: ('100p': 100%, '100vh': 100vh, 'auto': auto, '160': 160px, '550': 550px)
+    $maxWidth: ('400': 400px, '450': 450px, '490': 490px, '100vw': 100vh, '930': 930px, '300': 300px, '360': 360px, '270': 270px, '230': 230px,)
+    $width: ('100p': 100%)
+    @if $option == display
+        @each $name, $displayed in $display
+            .d-#{$name}#{$sizeName}
+                @include elements($option, $displayed)
+            @if $name == flx
+                .d-#{$name}-sb-center#{$sizeName}
+                    @include elements($option, $displayed)
+            @if $name == flx
+                .d-#{$name}-sb-center#{$sizeName}
+                    @include elements($option, $displayed)
+    @if $option == align-items
+        @each $name, $displayed in $alignItem
+            .al-i-#{$name}#{$sizeName}
+                @include elements($option, $displayed)
+            @if $name == c
+                .d-flx-sb-center#{$sizeName}
+                    @include elements($option, $displayed)
+    @if $option == align-self
+        @each $name, $displayed in $alignSelf
+            .al-s-#{$name}#{$sizeName}
+                @include elements($option, $displayed)
+    @if $option == justify-content
+        @each $name, $displayed in $justifyContent
+            .jc-#{$name}#{$sizeName}
+                @include elements($option, $displayed)
+            @if $name == sb
+                .d-flx-sb-center#{$sizeName}
+                    @include elements($option, $displayed)
+    @if $option == flex-direction
+        @each $name, $displayed in $flexDirection
+            .flx-#{$name}#{$sizeName}
+                @include elements($option, $displayed)
+    @if $option == flex-wrap
+        @each $name, $displayed in $flexWrap
+            .flx-#{$name}#{$sizeName}
+                @include elements($option, $displayed)
+    @if $option == font-size
+        @for $i from 10 through 20
+            @if $i % 2 == 0
+                .f-#{$i}#{$sizeName}
+                    @include elements($option, #{$i/10}rem)
+    @if $option == flex-grid
+        $column: 12
+        @for $i from 1 through $column
+            .col-#{$i}#{$sizeName}
+                flex: 0 0 100% / $column * $i
+            .col-offset-#{$i}#{$sizeName}
+                margin-left: 100% / $column * $i
+        .row#{$sizeName}
+            display: flex
+            flex-wrap: wrap
+    @if $option == gutter
+        @for $i from 0 through 40
+            @if $i % 5 == 0
+                .gutter-#{$i}#{$sizeName}
+                    margin: -#{$i/2}px
+                    > *
+                        padding: #{$i/2}px
+        .no-gutter#{$sizeName}
+            margin: 0
+            > *
+                padding: 0
+    @if $option == min-height
+        @each $name, $displayed in $minHeight
+            .mh-#{$name}#{$sizeName}
+                @include elements($option, $displayed)
+    @if $option == max-width
+        @each $name, $displayed in $maxWidth
+            .mw-#{$name}#{$sizeName}
+                @include elements($option, $displayed)
+    @if $option == width
+        @each $name, $displayed in $width
+            .w-#{$name}#{$sizeName}
+                @include elements($option, $displayed)
+    @if $option == flex
+        @for $i from 1 through 10
+            .flex-#{$i}#{$sizeName}
+                @include elements($option, $i)
+    @if $option == position
+        @each $name, $displayed in $position
+            .pos-#{$name}#{$sizeName}
+                @include elements($option, $displayed)
+    @if $option == z-index
+        @for $i from 1 through 10
+            .z-depth-#{$i}#{$sizeName}
+                @include elements($option, $i)
+                    
+
+//Displays
+@each $option in $displayoptions
+    @include displays($option, '')
+
+
+
+//round borders
+$round: ("30": 30px, "10": 10px, "50p": 50%)
+@mixin rounded($name, $displayed, $sizeName)
+    .round-#{$name}#{$sizeName}
+        border-radius: $displayed
+@each $name, $displayed in $round
+    @include rounded($name, $displayed, '')
+
+
+
+
+// icons
+@mixin icons($i, $num, $sizeName)
+    .icon-#{$i * 4}#{$sizeName}
+        width: $num
+        height: $num
+@for $i from 1 through 25
+    $num:  $i * 0.4rem
+    @include icons($i, $num, '')
+
+
+//media break points 
+@each $sizeName, $sizes in $breakpoin
+    @media #{ $sizes }
+        @each $abbr, $dir in $dirctn
+            //margin paddin
+            @include mar-pad(m, $abbr, $dir, #{$sizeName})
+            @include mar-pad(p, $abbr, $dir, #{$sizeName})
+            
+            // borders
+            @include borders($abbr, $dir, $sizeName )
+
+        //displays
+        @each $option in $displayoptions
+            @include displays($option, $sizeName)
+            
+        //round borders
+        @each $name, $displayed in $round
+            @include rounded($name, $displayed, $sizeName)
+
+
+        
+        // icons
+        @for $i from 1 through 5
+            $num:  $i * 8rem
+            @include icons($i, $num, $sizeName)
+                
+
+.icon-shadow
+    box-shadow: $boxshadow
+    
+.cursor-pointer
+    cursor: pointer
+        
+.img-cover
+    object-fit: cover
+
+.img-contain
+    object-fit: contain
+
+div 
+    > .last-out-20
+        margin-bottom: 20px
+    > .last-out-20:last-of-type
+        margin-bottom: 0
+
+
+
+
+// Screen Reader Text
+    // The .sr class ensure element is available in the DOM but only to screen readers. The whitespace: nowrap rule ensures accessible texts aren't smushed off screen.
+    // @link https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+.sr:not(:focus):not(:active)
+    position:            absolute
+    width:               1px
+    height:              1px
+    padding:             0
+    margin:              -1px
+    border:              0
+    clip-path:           inset(100%)
+    overflow:            hidden
+    white-space:         nowrap  

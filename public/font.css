@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/SFUIDisplay-Regular.woff2') format('woff2'),
+    url('/fonts/SFUIDisplay-Regular.woff') format('woff'),
+    url('/fonts/SFUIDisplay-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/SFUIDisplay-Bold.woff2') format('woff2'),
+    url('/fonts/SFUIDisplay-Bold.woff') format('woff'),
+    url('/fonts/SFUIDisplay-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/SFCompactText-Medium.woff2') format('woff2'),
+    url('/fonts/SFCompactText-Medium.woff') format('woff'),
+    url('/fonts/SFCompactText-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/SFUIText-Regular.woff2') format('woff2'),
+    url('/fonts/SFUIText-Regular.woff') format('woff'),
+    url('/fonts/SFUIText-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

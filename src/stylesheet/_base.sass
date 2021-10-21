@@ -1,0 +1,118 @@
+// 
+    // Base
+
+    // @package eyowo
+    // @author  Rahman Are <psybug>
+    // @version 1.0.0
+
+// Resets
+
+@font-face
+    font-family: 'Inter'
+    src: url('../uploads/fonts/Inter-SemiBold.woff2') format('woff2'), url('../uploads/fonts/Inter-SemiBold.woff') format('woff'), url('../uploads/fonts/Inter-SemiBold.ttf') format('truetype')
+    font-weight: 600
+    font-style: normal
+    font-display: swap
+
+@font-face
+    font-family: 'Inter'
+    src: url('../uploads/fonts/Inter-Medium.woff2') format('woff2'), url('../uploads/fonts/Inter-Medium.woff') format('woff'), url('../uploads/fonts/Inter-Medium.ttf') format('truetype')
+    font-weight: 500
+    font-style: normal
+    font-display: swap
+
+@font-face
+    font-family: 'Inter'
+    src: url('../uploads/fonts/Inter-Regular.woff2') format('woff2'), url('../uploads/fonts/Inter-Regular.woff') format('woff'), url('../uploads/fonts/Inter-Regular.ttf') format('truetype')
+    font-weight: normal
+    font-style: normal
+    font-display: swap
+
+@font-face
+    font-family: 'Inter'
+    src: url('../uploads/fonts/Inter-Bold.woff2') format('woff2'), url('../uploads/fonts/Inter-Bold.woff') format('woff'), url('../uploads/fonts/Inter-Bold.ttf') format('truetype')
+    font-weight: bold
+    font-style: normal
+    font-display: swap
+
+
+html
+    font-size:                  $basefont
+    color:                  #000000
+    background-color:           #ffffff
+
+*,
+*::before,
+*::after
+    box-sizing:                 border-box
+
+*
+    outline-color:              inherit
+    outline:                    none
+    a
+        outline:                none
+    button
+        outline:                none
+
+body
+    margin:                     0
+    font-family:                $bodyfont
+    font-weight:                400
+    font-size:              $normalfont
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    line-height: normal 
+    overflow-x: hidden
+
+p
+    margin:                     0
+
+a,
+.as-link
+    text-decoration:            none
+    cursor:                     pointer
+    color:                      unset
+    transition:                 all 0.32s ease-out
+    &:focus, &:hover
+        text-decoration:        none
+        // color:                  unset
+        // color:                  $primarycolor
+header nav a:hover
+    // color:              $primarycolor
+
+audio, canvas, img, video
+    display:                    block
+    max-width:                  unset
+
+
+svg
+    max-width:                  none
+    pointer-events:             none
+    vertical-align:             middle
+    fill:                       inherit
+    // transition:                 all 0.32s ease
+
+ul
+    padding:               0
+    list-style:                 none
+    margin:                 0
+
+
+
+// Buttons, Inputs, 
+button
+    background:             none
+    outline:                    none
+
+
+input
+    &[type="email"],
+    &[type="submit"],
+    &[type="reset"],
+    &[type="button"]
+        background:             none
+        border:                 0
+        color:                  inherit
+        font-size:              inherit
+        font-family:            inherit
+        font-style:             normal
