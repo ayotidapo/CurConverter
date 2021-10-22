@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import useDebounce from 'hooks/useDebounce';
+import { useSelector, useDispatch } from 'react-redux';
+import { convertCurrency } from 'redux/actions/converterAction';
 import Loader from 'components/Loader';
 import styled from 'styled-components';
-import axios from 'axios';
 import { formatAmount } from 'helpers/functions';
 import Card from 'components/Card';
 import Input from 'components/Input';
@@ -51,16 +53,19 @@ const PageWrapper = styled.div`
 
 const ConverterPage = () => {
   const [inputValue, setInputValue] = useState('');
-  const [converting, setConverting] = useState(false);
+  // const [converting, setConverting] = useState(false);
   const [quoteValue, setQuoteValue] = useState({});
+  const { success, data, converting } = useSelector(
+    (state) => state.converterState,
+  );
+
+  const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: {
       amount: '',
       base: '',
       quote: '',
-    },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
     },
   });
 
@@ -68,26 +73,23 @@ const ConverterPage = () => {
   const { amount, base, quote } = values;
 
   useEffect(() => {
+    if (!success) return;
+    const rate = data?.result;
+    const quoteAmount = rate[quote];
+    const result = quoteAmount * parseFloat(amount);
+    setQuoteValue({ result, cur: quote });
+  }, [success]);
+
+  useEffect(() => {
+    if (amount && base && quote) makeConversion();
+  }, [amount, base, quote]);
+
+  useEffect(() => {
     if (amount && base && quote) makeConversion();
   }, [amount, base, quote]);
 
   const makeConversion = async () => {
-    try {
-      setConverting(true);
-      const response = await axios.get(
-        `https://api.fastforex.io/fetch-one?from=${base}&to=${quote}&api_key=${process.env.REACT_APP_CUR_CONV_KEY}`,
-      );
-      const rate = response?.data?.result;
-      const quoteAmount = rate[quote];
-
-      const result = quoteAmount * parseFloat(amount);
-      setConverting(false);
-      setQuoteValue({ result, cur: quote });
-    } catch (e) {
-      setConverting(false);
-      // eslint-disable-next-line no-alert
-      alert(e?.response?.data?.message || e?.message);
-    }
+    dispatch(convertCurrency(base, quote));
   };
 
   return (
@@ -150,80 +152,3 @@ const ConverterPage = () => {
 };
 
 export default ConverterPage;
-
-// import styled from 'styled-components';
-// import Card from 'components/Card';
-// import Input from 'components/Input';
-// import { Field, Formik, Form } from 'formik';
-// import { Link } from 'react-router-dom';
-
-// const PageWrapper = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   padding: 20px;
-//   align-items: center;
-
-//   section {
-//     font-size: 1.4rem;
-//     width: 90%;
-//     border: 1px solid #fafafa;
-//     box-shadow: 0px 40px 30px rgba(0, 0, 0, 0.02);
-//   }
-//   ${Card} {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-//     grid-gap: 10px 20px;
-//   }
-//   .link {
-//     margin-top: 40px;
-//     text-decoration: none;
-//     color: var(--pri-color);
-//     font-size: 1rem;
-//   }
-// `;
-
-// const ConverterPage = () => {
-//   return (
-//     <PageWrapper>
-//       <>
-//         <section>
-//           <Card>
-//             <Formik
-//               initialValues={{
-//                 amount: '',
-//               }}
-//               onSubmit={(values, actions) => {
-//                 setTimeout(() => {
-//                   alert(JSON.stringify(values, null, 2));
-//                   actions.setSubmitting(false);
-//                 }, 1000);
-//               }}
-//             >
-//               {(props) => (
-//                 <Form>
-//                   <Field
-//                     id="amount"
-//                     type="text"
-//                     value={values.amount}
-//                     onChange={handleChange}
-//                     error="Field id required"
-//                   />
-
-//                   <Input error="Field id required" />
-//                   <Input error="Field id required" />
-//                 </Form>
-//               )}
-//             </Formik>
-//           </Card>
-//         </section>
-
-//         <Link to="/current-rates" className="link">
-//           View Exchange Rates
-//         </Link>
-//       </>
-//     </PageWrapper>
-//   );
-// };
-
-// export default ConverterPage;

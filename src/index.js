@@ -1,4 +1,5 @@
 import { StrictMode } from 'react';
+import axios from 'axios';
 import ReactDOM from 'react-dom';
 import { ToastContainer, Zoom } from 'react-toastify';
 import AppProvider from 'context/Providers/AppProvider';
@@ -7,7 +8,8 @@ import './index.scss';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// eslint-disable-next-line no-console
+
+axios.defaults.baseURL = `https://api.fastforex.io/`;
 
 ReactDOM.render(
   <StrictMode>
