@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { ToastContainer, Zoom } from 'react-toastify';
 import AppProvider from 'context/Providers/AppProvider';
 import 'react-toastify/dist/ReactToastify.min.css';
-import './stylesheet/index.sass';
 import './index.scss';
 
 import App from './App';

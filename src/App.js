@@ -1,15 +1,15 @@
-import { Suspense, lazy } from 'react';
-import { PageLoader } from 'components/Loader';
+import Routes from 'routes';
 
-import './App.scss';
-
-const Main = lazy(() => import('./Main'));
+import store from 'store';
+import { Provider } from 'react-redux';
+import GlobalStyle from './GlobalStyle';
 
 function App() {
   return (
-    <Suspense fallback={<PageLoader />}>
-      <Main />
-    </Suspense>
+    <Provider store={store}>
+      <GlobalStyle />
+      <Routes />
+    </Provider>
   );
 }
 export default App;

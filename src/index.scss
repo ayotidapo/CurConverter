@@ -101,7 +101,7 @@ button {
   &::before {
     display: flex;
     align-items: center;
-    content: url(./src-assets/info.svg);
+    content: '';
   }
   .Toastify__progress-bar {
     background-color: #0d99f2;
@@ -114,7 +114,7 @@ button {
   &::before {
     display: flex;
     align-items: center;
-    content: url(./src-assets/warning.svg);
+    content: '';
   }
   .Toastify__progress-bar {
     background-color: #f2761b;
@@ -127,7 +127,7 @@ button {
   &::before {
     display: flex;
     align-items: center;
-    content: url(./src-assets/success.svg);
+    content: ' ';
   }
   .Toastify__progress-bar {
     background-color: #23bd86;
@@ -140,7 +140,7 @@ button {
   &::before {
     display: flex;
     align-items: center;
-    content: url(./src-assets/error.svg);
+    content: '';
   }
   .Toastify__progress-bar {
     background-color: #ec5865;
@@ -173,7 +173,7 @@ button {
     background-color: #050101 !important;
   }
   &::after {
-    content: url('./src-assets/ryt-caret.svg');
+    content: '';
     margin-left: 10px;
     margin-top: 4px;
   }
