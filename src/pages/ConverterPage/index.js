@@ -63,7 +63,7 @@ const ConverterPage = () => {
 
   const formik = useFormik({
     initialValues: {
-      amount: '',
+      amount: 0,
       base: '',
       quote: '',
     },
@@ -71,6 +71,8 @@ const ConverterPage = () => {
 
   const { values, handleChange, handleBlur } = formik;
   const { amount, base, quote } = values;
+
+  const dedAmount = useDebounce(amount, 5000);
 
   useEffect(() => {
     if (!success) return;
@@ -81,12 +83,12 @@ const ConverterPage = () => {
   }, [success]);
 
   useEffect(() => {
-    if (amount && base && quote) makeConversion();
-  }, [amount, base, quote]);
+    if (dedAmount && base && quote) makeConversion();
+  }, [dedAmount, base, quote]);
 
   useEffect(() => {
-    if (amount && base && quote) makeConversion();
-  }, [amount, base, quote]);
+    if (dedAmount && base && quote) makeConversion();
+  }, [dedAmount, base, quote]);
 
   const makeConversion = async () => {
     dispatch(convertCurrency(base, quote));
@@ -134,7 +136,7 @@ const ConverterPage = () => {
         {converting && <Loader />}
         {quoteValue?.result && !converting && (
           <div className="result-div">
-            <span className="pri-col">{base}</span> {formatAmount(amount)}{' '}
+            <span className="pri-col">{base}</span> {formatAmount(dedAmount)}{' '}
             <small>is equivalent to</small>
             <h1 className="equals">
               <span className="pri-col">{quoteValue?.cur} </span>
