@@ -5,18 +5,21 @@ const InputWrapper = styled.div`
   position: relative;
   .cur-sign {
     position: absolute;
-    top: 8px;
+    top: 37px;
     left: 10px;
-    color: #000;
-
-    + ${SimpleInput} {
-      padding-left: 28px !important;
-    }
+    color: var(--pri-color);
+    font-size: 1.2rem;
+  }
+  label {
+    font-size: 1rem;
+    min-height: 25px;
+    display: block;
   }
 `;
 
 const SelectInput = styled.select`
   ${GenericIputStyle}
+  color: #000;
 `;
 
 const ErrorText = styled.div`
@@ -26,11 +29,12 @@ const ErrorText = styled.div`
 `;
 
 const Input = (props) => {
-  const { error, curSign, data, ...rest } = props;
+  const { error, label, curSign, data, ...rest } = props;
 
   if (props.type === 'select') {
     return (
       <InputWrapper>
+        <label>{label}</label>
         <SelectInput {...rest}>
           {data.map((option) => (
             <option key={option.currency} value={option.currency}>
@@ -44,6 +48,7 @@ const Input = (props) => {
 
   return (
     <InputWrapper>
+      <label>{label}</label>
       <div className="cur-sign">{curSign}</div>
       <SimpleInput {...rest} />
       <ErrorText>{error}</ErrorText>

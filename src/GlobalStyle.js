@@ -19,6 +19,9 @@ const GlobalStyle = createGlobalStyle`
     .txt-ctr{
         text-align:center;
     }
+    .pri-col{
+        color:var(--pri-color)
+    }
     
 	
 `;

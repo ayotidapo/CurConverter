@@ -1,5 +1,9 @@
 const currencies = [
   {
+    name: 'Select Currency',
+    currency: '',
+  },
+  {
     name: 'Emirati Dirham',
     currency: 'AED',
   },
@@ -228,11 +232,7 @@ const currencies = [
     currency: 'IDR',
   },
   {
-    name: 'Palestinian Territory',
-    currency: 'ILS',
-  },
-  {
-    name: 'Israel',
+    name: 'Israeli Shekel',
     currency: 'ILS',
   },
   {
@@ -592,10 +592,6 @@ const currencies = [
   },
   {
     name: 'Central Africa CRA Franc',
-    currency: 'XAF',
-  },
-  {
-    name: 'Gabon',
     currency: 'XAF',
   },
 
