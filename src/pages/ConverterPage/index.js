@@ -52,18 +52,20 @@ const PageWrapper = styled.div`
 `;
 
 const ConverterPage = () => {
-  const [inputValue, setInputValue] = useState('');
-  // const [converting, setConverting] = useState(false);
+  const [inputValue, setInputValue] = useState(' ');
+  const [prevData, setPrevData] = useState({});
   const [quoteValue, setQuoteValue] = useState({});
   const { success, data, converting } = useSelector(
     (state) => state.converterState,
   );
 
+  const { prevQuote, prevBase, prevAmount, prevResult } = prevData;
+
   const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: {
-      amount: 0,
+      amount: '',
       base: '',
       quote: '',
     },
@@ -72,7 +74,7 @@ const ConverterPage = () => {
   const { values, handleChange, handleBlur } = formik;
   const { amount, base, quote } = values;
 
-  const dedAmount = useDebounce(amount, 5000);
+  const debAmount = useDebounce(amount, 2000);
 
   useEffect(() => {
     if (!success) return;
@@ -80,20 +82,36 @@ const ConverterPage = () => {
     const quoteAmount = rate[quote];
     const result = quoteAmount * parseFloat(amount);
     setQuoteValue({ result, cur: quote });
+
+    const lsData = {
+      prevQuote: quote,
+      prevBase: base,
+      prevAmount: amount,
+      prevResult: result,
+    };
+    localStorage.lConvert = JSON.stringify(lsData);
   }, [success]);
 
   useEffect(() => {
-    if (dedAmount && base && quote) makeConversion();
-  }, [dedAmount, base, quote]);
+    if (!localStorage.lConvert) return;
+    const lsData = JSON.parse(localStorage.lConvert);
+    setPrevData(lsData);
+    const formated = formatAmount(lsData?.prevAmount);
+    setInputValue(formated);
+  }, [debAmount, base, quote]);
 
   useEffect(() => {
-    if (dedAmount && base && quote) makeConversion();
-  }, [dedAmount, base, quote]);
+    const Amt = debAmount || prevAmount;
+    const bs = base || prevBase;
+    const qt = quote || prevQuote;
 
-  const makeConversion = async () => {
-    dispatch(convertCurrency(base, quote));
+    if (Amt && bs && qt) makeConversion(bs, qt);
+  }, [debAmount, base, quote]);
+
+  const makeConversion = async (bas, quot) => {
+    dispatch(convertCurrency(bas, quot));
   };
-
+  console.log(converting, '0p');
   return (
     <PageWrapper>
       <section>
@@ -106,18 +124,23 @@ const ConverterPage = () => {
             value={inputValue}
             onChange={(e) => {
               handleChange(e);
-              setInputValue(e.target.value);
+              const val = e.target.value;
+              const newVal = val.replace(/,/g, '');
+              console.log(newVal, 90);
+              setInputValue(newVal);
             }}
             onBlur={(e) => {
               handleBlur(e);
-              const formatted = formatAmount(e.target.value);
+              const val = e.target.value || prevAmount;
+              const formatted = formatAmount(val);
               setInputValue(formatted);
             }}
-            curSign={base}
+            curSign={base || prevBase}
           />
 
           <Input
             data={currencies}
+            defaultValue={prevBase}
             id="base"
             name="base"
             label="Change From"
@@ -126,6 +149,7 @@ const ConverterPage = () => {
           />
           <Input
             data={currencies}
+            defaultValue={prevQuote}
             id="quote"
             name="quote"
             label="to"
@@ -133,22 +157,36 @@ const ConverterPage = () => {
             type="select"
           />
         </Card>
+
         {converting && <Loader />}
-        {quoteValue?.result && !converting && (
+        {(quoteValue?.result || prevQuote) && !converting && (
           <div className="result-div">
-            <span className="pri-col">{base}</span> {formatAmount(dedAmount)}{' '}
+            <span className="pri-col">{base || prevBase}</span>{' '}
+            {formatAmount(debAmount || prevAmount)}{' '}
             <small>is equivalent to</small>
             <h1 className="equals">
-              <span className="pri-col">{quoteValue?.cur} </span>
-              {formatAmount(quoteValue?.result)}
+              <span className="pri-col">
+                {quoteValue?.cur || prevQuote} &nbsp;
+              </span>
+              {formatAmount(quoteValue?.result || prevResult)}
             </h1>
           </div>
         )}
       </section>
 
-      <Link to="/current-rates" className="link">
-        View Exchange Rates
-      </Link>
+      {(base || prevBase) && (
+        <Link
+          to={{
+            pathname: '/current-rates',
+            state: {
+              base: base || prevBase,
+            },
+          }}
+          className="link"
+        >
+          View Exchange Rates
+        </Link>
+      )}
     </PageWrapper>
   );
 };

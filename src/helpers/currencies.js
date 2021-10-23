@@ -1,625 +1,625 @@
 const currencies = [
   {
-    name: 'Select Currency',
-    currency: '',
+    label: 'Select value',
+    value: '',
   },
   {
-    name: 'Emirati Dirham',
-    currency: 'AED',
+    label: 'Emirati Dirham',
+    value: 'AED',
   },
   {
-    name: 'Afghan Afghani',
-    currency: 'AFN',
+    label: 'Afghan Afghani',
+    value: 'AFN',
   },
   {
-    name: 'Albania Lek',
-    currency: 'ALL',
+    label: 'Albania Lek',
+    value: 'ALL',
   },
   {
-    name: 'Armenia Dram',
-    currency: 'AMD',
+    label: 'Armenia Dram',
+    value: 'AMD',
   },
   {
-    name: 'Dutch Cuilder',
-    currency: 'ANG',
-  },
-
-  {
-    name: 'Angola Kwanza',
-    currency: 'AOA',
-  },
-  {
-    name: 'Argentina Peso',
-    currency: 'ARS',
-  },
-  {
-    name: 'Australia Dollar',
-    currency: 'AUD',
-  },
-  {
-    name: 'Aruba',
-    currency: 'AWG',
-  },
-  {
-    name: 'Azerbaijan Manat',
-    currency: 'AZN',
-  },
-  {
-    name: 'Bosnia and Herzegovina',
-    currency: 'BAM',
-  },
-  {
-    name: 'Barbadian or Bajian Dollar',
-    currency: 'BBD',
-  },
-  {
-    name: 'Bangladeshi Taka',
-    currency: 'BDT',
-  },
-  {
-    name: 'Bulgaria Lev',
-    currency: 'BGN',
-  },
-  {
-    name: 'Bahrain Dinar',
-    currency: 'BHD',
-  },
-  {
-    name: 'Burundian Franc',
-    currency: 'BIF',
-  },
-  {
-    name: 'Bermudian Dollar',
-    currency: 'BMD',
-  },
-  {
-    name: 'Bruneian Dollar',
-    currency: 'BND',
-  },
-  {
-    name: 'Bolivian Boliviano',
-    currency: 'BOB',
-  },
-  {
-    name: 'Brazilian Real',
-    currency: 'BRL',
-  },
-  {
-    name: 'Bahamian Dollar',
-    currency: 'BSD',
-  },
-  {
-    name: 'Bhutan Ngultrum',
-    currency: 'BTN',
-  },
-  {
-    name: 'Botswana Pula',
-    currency: 'BWP',
-  },
-  {
-    name: 'Belarusian Rubble',
-    currency: 'BYR',
-  },
-  {
-    name: 'Belizian Dollar',
-    currency: 'BZD',
-  },
-  {
-    name: 'Canadian Dollar',
-    currency: 'CAD',
-  },
-  {
-    name: 'Congolese Franc',
-    currency: 'CDF',
-  },
-  {
-    name: 'Swiss Franc',
-    currency: 'CHF',
+    label: 'Dutch Cuilder',
+    value: 'ANG',
   },
 
   {
-    name: 'Chilian Peso',
-    currency: 'CLP',
+    label: 'Angola Kwanza',
+    value: 'AOA',
   },
   {
-    name: 'Chinese Yuan',
-    currency: 'CNY',
+    label: 'Argentina Peso',
+    value: 'ARS',
   },
   {
-    name: 'Colombian Peso',
-    currency: 'COP',
+    label: 'Australia Dollar',
+    value: 'AUD',
   },
   {
-    name: 'Costa Rica Colon',
-    currency: 'CRC',
+    label: 'Aruba',
+    value: 'AWG',
   },
   {
-    name: 'Cuban Peso',
-    currency: 'CUP',
+    label: 'Azerbaijan Manat',
+    value: 'AZN',
   },
   {
-    name: 'Cape Verde Escudo',
-    currency: 'CVE',
+    label: 'Bosnia and Herzegovina',
+    value: 'BAM',
   },
   {
-    name: 'Czech Koruna',
-    currency: 'CZK',
+    label: 'Barbadian or Bajian Dollar',
+    value: 'BBD',
   },
   {
-    name: 'Djibouti',
-    currency: 'DJF',
+    label: 'Bangladeshi Taka',
+    value: 'BDT',
   },
   {
-    name: 'Danish Krone',
-    currency: 'DKK',
-  },
-
-  {
-    name: 'Dominican Republic',
-    currency: 'DOP',
+    label: 'Bulgaria Lev',
+    value: 'BGN',
   },
   {
-    name: 'Algeria',
-    currency: 'DZD',
+    label: 'Bahrain Dinar',
+    value: 'BHD',
   },
   {
-    name: 'Egypt',
-    currency: 'EGP',
+    label: 'Burundian Franc',
+    value: 'BIF',
   },
   {
-    name: 'Eritrea',
-    currency: 'ERN',
+    label: 'Bermudian Dollar',
+    value: 'BMD',
   },
   {
-    name: 'Ethiopia',
-    currency: 'ETB',
+    label: 'Bruneian Dollar',
+    value: 'BND',
   },
   {
-    name: 'Euro',
-    currency: 'EUR',
-  },
-
-  {
-    name: 'Georgia',
-    currency: 'GEL',
+    label: 'Bolivian Boliviano',
+    value: 'BOB',
   },
   {
-    name: 'Ghana',
-    currency: 'GHS',
+    label: 'Brazilian Real',
+    value: 'BRL',
   },
   {
-    name: 'Gibraltar',
-    currency: 'GIP',
+    label: 'Bahamian Dollar',
+    value: 'BSD',
   },
   {
-    name: 'Gambia',
-    currency: 'GMD',
+    label: 'Bhutan Ngultrum',
+    value: 'BTN',
   },
   {
-    name: 'Guinea',
-    currency: 'GNF',
+    label: 'Botswana Pula',
+    value: 'BWP',
   },
   {
-    name: 'Guatemala',
-    currency: 'GTQ',
+    label: 'Belarusian Rubble',
+    value: 'BYR',
   },
   {
-    name: 'Guyana',
-    currency: 'GYD',
+    label: 'Belizian Dollar',
+    value: 'BZD',
   },
   {
-    name: 'Hong Kong',
-    currency: 'HKD',
+    label: 'Canadian Dollar',
+    value: 'CAD',
   },
   {
-    name: 'Honduras',
-    currency: 'HNL',
+    label: 'Congolese Franc',
+    value: 'CDF',
   },
   {
-    name: 'Croatia',
-    currency: 'HRK',
-  },
-  {
-    name: 'Haiti',
-    currency: 'HTG',
-  },
-  {
-    name: 'Hungary',
-    currency: 'HUF',
-  },
-  {
-    name: 'Indonesia',
-    currency: 'IDR',
-  },
-  {
-    name: 'Israeli Shekel',
-    currency: 'ILS',
-  },
-  {
-    name: 'India',
-    currency: 'INR',
-  },
-  {
-    name: 'Iraq',
-    currency: 'IQD',
-  },
-  {
-    name: 'Iran',
-    currency: 'IRR',
-  },
-  {
-    name: 'Iceland',
-    currency: 'ISK',
-  },
-  {
-    name: 'Jamaica',
-    currency: 'JMD',
-  },
-  {
-    name: 'Jordan',
-    currency: 'JOD',
-  },
-  {
-    name: 'Japan',
-    currency: 'JPY',
-  },
-  {
-    name: 'Kenya',
-    currency: 'KES',
-  },
-  {
-    name: 'Kyrgyzstan',
-    currency: 'KGS',
-  },
-  {
-    name: 'Cambodia',
-    currency: 'KHR',
-  },
-  {
-    name: 'Comoros',
-    currency: 'KMF',
-  },
-  {
-    name: 'North Korea',
-    currency: 'KPW',
-  },
-  {
-    name: 'South Korea',
-    currency: 'KRW',
-  },
-  {
-    name: 'Kuwait',
-    currency: 'KWD',
-  },
-  {
-    name: 'Cayman Islands',
-    currency: 'KYD',
-  },
-  {
-    name: 'Kazakhstan',
-    currency: 'KZT',
-  },
-  {
-    name: 'Laos',
-    currency: 'LAK',
-  },
-  {
-    name: 'Lebanon',
-    currency: 'LBP',
-  },
-  {
-    name: 'Sri Lanka',
-    currency: 'LKR',
-  },
-  {
-    name: 'Liberia',
-    currency: 'LRD',
-  },
-  {
-    name: 'Lesotho',
-    currency: 'LSL',
-  },
-  {
-    name: 'Lithuania',
-    currency: 'LTL',
-  },
-  {
-    name: 'Libya',
-    currency: 'LYD',
-  },
-  {
-    name: 'Moroccan Dirham',
-    currency: 'MAD',
+    label: 'Swiss Franc',
+    value: 'CHF',
   },
 
   {
-    name: 'Moldova',
-    currency: 'MDL',
+    label: 'Chilian Peso',
+    value: 'CLP',
   },
   {
-    name: 'Madagascar',
-    currency: 'MGA',
+    label: 'Chinese Yuan',
+    value: 'CNY',
   },
   {
-    name: 'Macedonia',
-    currency: 'MKD',
+    label: 'Colombian Peso',
+    value: 'COP',
   },
   {
-    name: 'Myanmar',
-    currency: 'MMK',
+    label: 'Costa Rica Colon',
+    value: 'CRC',
   },
   {
-    name: 'Mongolia',
-    currency: 'MNT',
+    label: 'Cuban Peso',
+    value: 'CUP',
   },
   {
-    name: 'Macao',
-    currency: 'MOP',
+    label: 'Cape Verde Escudo',
+    value: 'CVE',
   },
   {
-    name: 'Mauritania',
-    currency: 'MRO',
+    label: 'Czech Koruna',
+    value: 'CZK',
   },
   {
-    name: 'Mauritius',
-    currency: 'MUR',
+    label: 'Djibouti',
+    value: 'DJF',
   },
   {
-    name: 'Maldives',
-    currency: 'MVR',
-  },
-  {
-    name: 'Malawi',
-    currency: 'MWK',
-  },
-  {
-    name: 'Mexico',
-    currency: 'MXN',
-  },
-  {
-    name: 'Malaysia',
-    currency: 'MYR',
-  },
-  {
-    name: 'Mozambique',
-    currency: 'MZN',
-  },
-  {
-    name: 'Namibia',
-    currency: 'NAD',
-  },
-  {
-    name: 'Nigeria',
-    currency: 'NGN',
-  },
-  {
-    name: 'Nicaragua',
-    currency: 'NIO',
-  },
-  {
-    name: 'Norwegian Krone',
-    currency: 'NOK',
+    label: 'Danish Krone',
+    value: 'DKK',
   },
 
   {
-    name: 'Nepal',
-    currency: 'NPR',
+    label: 'Dominican Republic',
+    value: 'DOP',
   },
   {
-    name: 'New Zealand Dollar',
-    currency: 'NZD',
-  },
-
-  {
-    name: 'Oman',
-    currency: 'OMR',
+    label: 'Algeria',
+    value: 'DZD',
   },
   {
-    name: 'Panama',
-    currency: 'PAB',
+    label: 'Egypt',
+    value: 'EGP',
   },
   {
-    name: 'Peru',
-    currency: 'PEN',
+    label: 'Eritrea',
+    value: 'ERN',
   },
   {
-    name: 'Papua New Guinea',
-    currency: 'PGK',
+    label: 'Ethiopia',
+    value: 'ETB',
   },
   {
-    name: 'Philippines',
-    currency: 'PHP',
-  },
-  {
-    name: 'Pakistan',
-    currency: 'PKR',
-  },
-  {
-    name: 'Poland',
-    currency: 'PLN',
-  },
-  {
-    name: 'Paraguay',
-    currency: 'PYG',
-  },
-  {
-    name: 'Qatar',
-    currency: 'QAR',
-  },
-  {
-    name: 'Romania',
-    currency: 'RON',
-  },
-  {
-    name: 'Serbia',
-    currency: 'RSD',
-  },
-  {
-    name: 'Russia',
-    currency: 'RUB',
-  },
-  {
-    name: 'Rwanda',
-    currency: 'RWF',
-  },
-  {
-    name: 'Saudi Arabia',
-    currency: 'SAR',
-  },
-  {
-    name: 'Solomon Islands',
-    currency: 'SBD',
-  },
-  {
-    name: 'Seychelles',
-    currency: 'SCR',
-  },
-  {
-    name: 'Sudan',
-    currency: 'SDG',
-  },
-  {
-    name: 'Sweden',
-    currency: 'SEK',
-  },
-  {
-    name: 'Singapore',
-    currency: 'SGD',
-  },
-  {
-    name: 'Saint Helena',
-    currency: 'SHP',
-  },
-  {
-    name: 'Sierra Leone',
-    currency: 'SLL',
-  },
-  {
-    name: 'Somalia',
-    currency: 'SOS',
-  },
-  {
-    name: 'Suriname',
-    currency: 'SRD',
-  },
-  {
-    name: 'South Sudan',
-    currency: 'SSP',
-  },
-  {
-    name: 'Sao Tome and Principe',
-    currency: 'STD',
-  },
-  {
-    name: 'Syria',
-    currency: 'SYP',
-  },
-  {
-    name: 'Swaziland',
-    currency: 'SZL',
-  },
-  {
-    name: 'Thailand',
-    currency: 'THB',
-  },
-  {
-    name: 'Tajikistan',
-    currency: 'TJS',
-  },
-  {
-    name: 'Turkmenistan',
-    currency: 'TMT',
-  },
-  {
-    name: 'Tunisia',
-    currency: 'TND',
-  },
-  {
-    name: 'Tonga',
-    currency: 'TOP',
-  },
-  {
-    name: 'Turkey',
-    currency: 'TRY',
-  },
-  {
-    name: 'Trinidad and Tobago',
-    currency: 'TTD',
-  },
-  {
-    name: 'Taiwan',
-    currency: 'TWD',
-  },
-  {
-    name: 'Tanzania',
-    currency: 'TZS',
-  },
-  {
-    name: 'Ukraine',
-    currency: 'UAH',
-  },
-  {
-    name: 'Uganda',
-    currency: 'UGX',
-  },
-  {
-    name: 'US Dollar',
-    currency: 'USD',
-  },
-  {
-    name: 'Uruguay',
-    currency: 'UYU',
-  },
-  {
-    name: 'Uzbekistan',
-    currency: 'UZS',
-  },
-  {
-    name: 'Venezuela',
-    currency: 'VEF',
-  },
-  {
-    name: 'Vietnam',
-    currency: 'VND',
-  },
-  {
-    name: 'Vanuatu',
-    currency: 'VUV',
-  },
-  {
-    name: 'Samoa',
-    currency: 'WST',
-  },
-  {
-    name: 'Central Africa CRA Franc',
-    currency: 'XAF',
+    label: 'Euro',
+    value: 'EUR',
   },
 
   {
-    name: 'East Carribean Dollar',
-    currency: 'XCD',
+    label: 'Georgia',
+    value: 'GEL',
+  },
+  {
+    label: 'Ghana',
+    value: 'GHS',
+  },
+  {
+    label: 'Gibraltar',
+    value: 'GIP',
+  },
+  {
+    label: 'Gambia',
+    value: 'GMD',
+  },
+  {
+    label: 'Guinea',
+    value: 'GNF',
+  },
+  {
+    label: 'Guatemala',
+    value: 'GTQ',
+  },
+  {
+    label: 'Guyana',
+    value: 'GYD',
+  },
+  {
+    label: 'Hong Kong',
+    value: 'HKD',
+  },
+  {
+    label: 'Honduras',
+    value: 'HNL',
+  },
+  {
+    label: 'Croatia',
+    value: 'HRK',
+  },
+  {
+    label: 'Haiti',
+    value: 'HTG',
+  },
+  {
+    label: 'Hungary',
+    value: 'HUF',
+  },
+  {
+    label: 'Indonesia',
+    value: 'IDR',
+  },
+  {
+    label: 'Israeli Shekel',
+    value: 'ILS',
+  },
+  {
+    label: 'India',
+    value: 'INR',
+  },
+  {
+    label: 'Iraq',
+    value: 'IQD',
+  },
+  {
+    label: 'Iran',
+    value: 'IRR',
+  },
+  {
+    label: 'Iceland',
+    value: 'ISK',
+  },
+  {
+    label: 'Jamaica',
+    value: 'JMD',
+  },
+  {
+    label: 'Jordan',
+    value: 'JOD',
+  },
+  {
+    label: 'Japan',
+    value: 'JPY',
+  },
+  {
+    label: 'Kenya',
+    value: 'KES',
+  },
+  {
+    label: 'Kyrgyzstan',
+    value: 'KGS',
+  },
+  {
+    label: 'Cambodia',
+    value: 'KHR',
+  },
+  {
+    label: 'Comoros',
+    value: 'KMF',
+  },
+  {
+    label: 'North Korea',
+    value: 'KPW',
+  },
+  {
+    label: 'South Korea',
+    value: 'KRW',
+  },
+  {
+    label: 'Kuwait',
+    value: 'KWD',
+  },
+  {
+    label: 'Cayman Islands',
+    value: 'KYD',
+  },
+  {
+    label: 'Kazakhstan',
+    value: 'KZT',
+  },
+  {
+    label: 'Laos',
+    value: 'LAK',
+  },
+  {
+    label: 'Lebanon',
+    value: 'LBP',
+  },
+  {
+    label: 'Sri Lanka',
+    value: 'LKR',
+  },
+  {
+    label: 'Liberia',
+    value: 'LRD',
+  },
+  {
+    label: 'Lesotho',
+    value: 'LSL',
+  },
+  {
+    label: 'Lithuania',
+    value: 'LTL',
+  },
+  {
+    label: 'Libya',
+    value: 'LYD',
+  },
+  {
+    label: 'Moroccan Dirham',
+    value: 'MAD',
   },
 
   {
-    name: 'CFA Franc',
-    currency: 'XOF',
+    label: 'Moldova',
+    value: 'MDL',
+  },
+  {
+    label: 'Madagascar',
+    value: 'MGA',
+  },
+  {
+    label: 'Macedonia',
+    value: 'MKD',
+  },
+  {
+    label: 'Myanmar',
+    value: 'MMK',
+  },
+  {
+    label: 'Mongolia',
+    value: 'MNT',
+  },
+  {
+    label: 'Macao',
+    value: 'MOP',
+  },
+  {
+    label: 'Mauritania',
+    value: 'MRO',
+  },
+  {
+    label: 'Mauritius',
+    value: 'MUR',
+  },
+  {
+    label: 'Maldives',
+    value: 'MVR',
+  },
+  {
+    label: 'Malawi',
+    value: 'MWK',
+  },
+  {
+    label: 'Mexico',
+    value: 'MXN',
+  },
+  {
+    label: 'Malaysia',
+    value: 'MYR',
+  },
+  {
+    label: 'Mozambique',
+    value: 'MZN',
+  },
+  {
+    label: 'Namibia',
+    value: 'NAD',
+  },
+  {
+    label: 'Nigeria',
+    value: 'NGN',
+  },
+  {
+    label: 'Nicaragua',
+    value: 'NIO',
+  },
+  {
+    label: 'Norwegian Krone',
+    value: 'NOK',
   },
 
   {
-    name: 'Yemen',
-    currency: 'YER',
+    label: 'Nepal',
+    value: 'NPR',
   },
   {
-    name: 'South Africa',
-    currency: 'ZAR',
+    label: 'New Zealand Dollar',
+    value: 'NZD',
+  },
+
+  {
+    label: 'Oman',
+    value: 'OMR',
   },
   {
-    name: 'Zambia',
-    currency: 'ZMK',
+    label: 'Panama',
+    value: 'PAB',
   },
   {
-    name: 'Zimbabwe',
-    currency: 'ZWL',
+    label: 'Peru',
+    value: 'PEN',
+  },
+  {
+    label: 'Papua New Guinea',
+    value: 'PGK',
+  },
+  {
+    label: 'Philippines',
+    value: 'PHP',
+  },
+  {
+    label: 'Pakistan',
+    value: 'PKR',
+  },
+  {
+    label: 'Poland',
+    value: 'PLN',
+  },
+  {
+    label: 'Paraguay',
+    value: 'PYG',
+  },
+  {
+    label: 'Qatar',
+    value: 'QAR',
+  },
+  {
+    label: 'Romania',
+    value: 'RON',
+  },
+  {
+    label: 'Serbia',
+    value: 'RSD',
+  },
+  {
+    label: 'Russia',
+    value: 'RUB',
+  },
+  {
+    label: 'Rwanda',
+    value: 'RWF',
+  },
+  {
+    label: 'Saudi Arabia',
+    value: 'SAR',
+  },
+  {
+    label: 'Solomon Islands',
+    value: 'SBD',
+  },
+  {
+    label: 'Seychelles',
+    value: 'SCR',
+  },
+  {
+    label: 'Sudan',
+    value: 'SDG',
+  },
+  {
+    label: 'Sweden',
+    value: 'SEK',
+  },
+  {
+    label: 'Singapore',
+    value: 'SGD',
+  },
+  {
+    label: 'Saint Helena',
+    value: 'SHP',
+  },
+  {
+    label: 'Sierra Leone',
+    value: 'SLL',
+  },
+  {
+    label: 'Somalia',
+    value: 'SOS',
+  },
+  {
+    label: 'Surilabel',
+    value: 'SRD',
+  },
+  {
+    label: 'South Sudan',
+    value: 'SSP',
+  },
+  {
+    label: 'Sao Tome and Principe',
+    value: 'STD',
+  },
+  {
+    label: 'Syria',
+    value: 'SYP',
+  },
+  {
+    label: 'Swaziland',
+    value: 'SZL',
+  },
+  {
+    label: 'Thailand',
+    value: 'THB',
+  },
+  {
+    label: 'Tajikistan',
+    value: 'TJS',
+  },
+  {
+    label: 'Turkmenistan',
+    value: 'TMT',
+  },
+  {
+    label: 'Tunisia',
+    value: 'TND',
+  },
+  {
+    label: 'Tonga',
+    value: 'TOP',
+  },
+  {
+    label: 'Turkey',
+    value: 'TRY',
+  },
+  {
+    label: 'Trinidad and Tobago',
+    value: 'TTD',
+  },
+  {
+    label: 'Taiwan',
+    value: 'TWD',
+  },
+  {
+    label: 'Tanzania',
+    value: 'TZS',
+  },
+  {
+    label: 'Ukraine',
+    value: 'UAH',
+  },
+  {
+    label: 'Uganda',
+    value: 'UGX',
+  },
+  {
+    label: 'US Dollar',
+    value: 'USD',
+  },
+  {
+    label: 'Uruguay',
+    value: 'UYU',
+  },
+  {
+    label: 'Uzbekistan',
+    value: 'UZS',
+  },
+  {
+    label: 'Venezuela',
+    value: 'VEF',
+  },
+  {
+    label: 'Vietnam',
+    value: 'VND',
+  },
+  {
+    label: 'Vanuatu',
+    value: 'VUV',
+  },
+  {
+    label: 'Samoa',
+    value: 'WST',
+  },
+  {
+    label: 'Central Africa CRA Franc',
+    value: 'XAF',
+  },
+
+  {
+    label: 'East Carribean Dollar',
+    value: 'XCD',
+  },
+
+  {
+    label: 'CFA Franc',
+    value: 'XOF',
+  },
+
+  {
+    label: 'Yemen',
+    value: 'YER',
+  },
+  {
+    label: 'South Africa',
+    value: 'ZAR',
+  },
+  {
+    label: 'Zambia',
+    value: 'ZMK',
+  },
+  {
+    label: 'Zimbabwe',
+    value: 'ZWL',
   },
 ];
 export default currencies;

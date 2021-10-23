@@ -29,16 +29,15 @@ const ErrorText = styled.div`
 `;
 
 const Input = (props) => {
-  const { error, label, curSign, data, ...rest } = props;
-
+  const { error, defaultValue, label, curSign, data, ...rest } = props;
   if (props.type === 'select') {
     return (
       <InputWrapper>
         <label>{label}</label>
-        <SelectInput {...rest}>
+        <SelectInput {...rest} value={defaultValue}>
           {data.map((option) => (
-            <option key={option.currency} value={option.currency}>
-              {option.currency} - {option.name}
+            <option key={option.value} value={option.value}>
+              {option.value} - {option.label}
             </option>
           ))}
         </SelectInput>
