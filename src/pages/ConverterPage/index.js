@@ -128,7 +128,6 @@ const ConverterPage = () => {
               handleChange(e);
               const val = e.target.value;
               const newVal = val.replace(/,/g, '');
-              console.log(newVal, 90);
               setInputValue(newVal);
             }}
             onBlur={(e) => {
