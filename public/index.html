@@ -27,7 +27,7 @@
     -->
 
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-    <title>Eyowo | Payments, Anytime, Anywhere</title>
+    <title>Currency Converter</title>
     <meta name="generator" content="Jekyll v3.7.4" />
     <meta property="og:title" content="Eyowo" />
     <meta property="og:locale" content="en_US" />
@@ -36,15 +36,7 @@
     <link rel="canonical" href="/checkout/" />
     <meta property="og:url" content="/checkout/" />
     <meta property="og:site_name" content="Eyowo" />
-    <script type="application/ld+json">
-      {
-        "description": "Payments, Anytime, Anywhere",
-        "@type": "WebPage",
-        "url": "/checkout/",
-        "headline": "Eyowo",
-        "@context": "https://schema.org"
-      }
-    </script>
+   
     <!-- End Jekyll SEO tag -->
     <title>React App</title>
   </head>
@@ -62,34 +54,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <!--<script src="https://agsandbox.accessbankplc.com:3303/build/v2/main.bundle.js"></script>-->
-     <!-- <script src="https://checkout3-staging.eyowo.com/eyowo-checkoutv3-inline.js"></script>  -->
-
-     <script type="text/javascript">
-
-      const eyowoScript = document.createElement("script");
-      const host =window.location.host;
-      let link="http://localhost:3008/checkoutv3.js";
-
-      if(host.includes('staging')){
-            link=`https://checkout3-staging.eyowo.com/eyowo-checkoutv3-inline.js`;
-      }else if (host.includes('eyowo.me')){
-        link=`https://checkout.eyowo.com/eyowo-checkoutv3-inline.js`;
-      }
-      eyowoScript.src=link;
-      document.body.appendChild(eyowoScript);
-
-  
-    
-     
-    
-     </script>
-   
-
-
   </body>
-  <!-- <script src="/lodash/lodash.js" type="text/javascript"></script>
-  <script src="/cloudinary-core/cloudinary-core.js" type="text/javascript"></script> -->
  
 </html>
 
