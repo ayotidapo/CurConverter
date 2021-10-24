@@ -77,24 +77,6 @@ const ConverterPage = () => {
   const debAmount = useDebounce(amount, 2000);
 
   useEffect(() => {
-    if (!success) return;
-    const rate = data?.result;
-    const theQuot = quote || prevQuote;
-    const quoteAmount = rate[theQuot];
-    const theAmt = debAmount || prevAmount;
-    const result = quoteAmount * parseFloat(theAmt);
-    setQuoteValue({ result, cur: quote });
-
-    const lsData = {
-      prevQuote: theQuot,
-      prevBase: base || prevBase,
-      prevAmount: theAmt,
-      prevResult: result,
-    };
-    localStorage.lConvert = JSON.stringify(lsData);
-  }, [success]);
-
-  useEffect(() => {
     if (!localStorage.lConvert) return;
     const lsData = JSON.parse(localStorage.lConvert);
     setPrevData(lsData);
@@ -111,7 +93,23 @@ const ConverterPage = () => {
   }, [debAmount, base, quote]);
 
   const makeConversion = async (bas, quot) => {
-    dispatch(convertCurrency(bas, quot));
+    const isSuccess = await convertCurrency(bas, quot)(dispatch);
+    if (!isSuccess) return;
+
+    const rate = data?.result;
+    const theQuot = quote || prevQuote;
+    const quoteAmount = rate[theQuot];
+    const theAmt = debAmount || prevAmount;
+    const result = quoteAmount * parseFloat(theAmt);
+    setQuoteValue({ result, cur: quote });
+
+    const lsData = {
+      prevQuote: theQuot,
+      prevBase: base || prevBase,
+      prevAmount: theAmt,
+      prevResult: result,
+    };
+    localStorage.lConvert = JSON.stringify(lsData);
   };
 
   return (
