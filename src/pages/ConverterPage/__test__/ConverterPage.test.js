@@ -47,7 +47,7 @@ describe('how Converter Page component works', () => {
     fireEvent.change(quoteSelectInput, { target: { value: 'NGN' } });
 
     converterState = await store.getState().converterState;
-    console.log(converterState);
+
     expect(converterState.converting).toBe(true);
 
     expect(axiosMock.get).toHaveBeenCalledWith(

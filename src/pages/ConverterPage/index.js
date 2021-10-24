@@ -183,7 +183,7 @@ const ConverterPage = () => {
           }}
           className="link"
         >
-          View Exchange Rates
+          View All Exchange Rates
         </Link>
       )}
     </PageWrapper>

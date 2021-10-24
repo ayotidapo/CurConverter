@@ -2,7 +2,7 @@ CurConver is a currency converter app for latest currency exchange, built with R
 
 ## To run the app
 
-1. clone the repo from the link [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+1. clone the repo from the link [Clone a repository](https://github.com/ayotidapo/CurConverter).
 2. cd into the directory CurConverter
 3. Type npm install and press Enter to install the dependencies
 4. Type npm start to run the local server and visit localhost:3004 on your browser
