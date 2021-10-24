@@ -1,4 +1,3 @@
-/* eslint-disable jest/no-deprecated-functions */
 /* eslint-disable no-undef */
 export default {
   interceptors: {
@@ -6,7 +5,7 @@ export default {
       use: () => ({}),
     },
   },
-  create: jest.fn(() => jest.genMockFromModule('axios')),
+  create: jest.fn(() => jest.createMockFromModule('axios')),
   get: jest.fn(() => Promise.resolve({ data: { success: true } })),
   defaults: {
     headers: {

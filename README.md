@@ -1,4 +1,4 @@
-CurConver is a currency converter app for latest currency exchange, built with React.
+CurConver is a currency converter app for latest currency exchange, built with React using fastForex API.
 
 ## To run the app
 

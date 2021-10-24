@@ -72,7 +72,7 @@ const ConverterPage = () => {
   const { values, handleChange, handleBlur } = formik;
   const { amount, base, quote } = values;
 
-  const debAmount = useDebounce(amount, 2000);
+  const debAmount = amount;
 
   useEffect(() => {
     if (!localStorage.lConvert) return;
@@ -133,6 +133,7 @@ const ConverterPage = () => {
               setInputValue(formatted);
             }}
             curSign={base || prevBase}
+            testId="amount-div"
           />
 
           <Input
@@ -143,7 +144,7 @@ const ConverterPage = () => {
             label="Change From"
             onChange={handleChange}
             type="select"
-            data-testid="base-select"
+            testId="base-select"
           />
           <Input
             data={currencies}
@@ -153,7 +154,7 @@ const ConverterPage = () => {
             label="to"
             onChange={handleChange}
             type="select"
-            data-testid="quote-select"
+            testId="quote-select"
           />
         </Card>
 

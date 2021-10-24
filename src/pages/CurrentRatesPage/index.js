@@ -33,6 +33,9 @@ const RatesWrapper = styled.div`
     cursor: pointer;
     color: var(--pri-color);
   }
+  ${Loader} {
+    margin-top: 15px;
+  }
 `;
 
 const CurrentRates = (props) => {
@@ -67,17 +70,20 @@ const CurrentRates = (props) => {
         label=""
         onChange={handleChange}
         type="select"
+        testId="rates-base"
       />
-      <div className="rates_dv">
+      <div>
         {loading ? (
-          <Loader />
+          <Loader data-testid="loader" />
         ) : (
-          data.map((obj) => (
-            <p key={obj.currency}>
-              <strong>1 {obj.currency} </strong> = {formatAmount(obj.rate, 3)}{' '}
-              &nbsp;
-            </p>
-          ))
+          <div className="rates_dv" data-testid="content-div">
+            {data.map((obj) => (
+              <p key={obj.currency}>
+                <strong>1 {obj.currency} </strong> = {formatAmount(obj.rate, 3)}{' '}
+                &nbsp;
+              </p>
+            ))}
+          </div>
         )}
       </div>
     </RatesWrapper>

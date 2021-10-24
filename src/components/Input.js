@@ -34,7 +34,7 @@ const Input = (props) => {
     return (
       <InputWrapper>
         <label>{label}</label>
-        <SelectInput {...rest} value={defaultValue}>
+        <SelectInput {...rest} value={defaultValue} data-testid={testId}>
           {data.map((option) => (
             <option key={option.value} value={option.value}>
               {option.value} - {option.label}

@@ -1,3 +1,5 @@
+// Commented currencie are not supported by FastForex.io API
+
 const currencies = [
   {
     label: 'Select Currency',
@@ -617,9 +619,9 @@ const currencies = [
     label: 'Zambia',
     value: 'ZMK',
   },
-  {
-    label: 'Zimbabwe',
-    value: 'ZWL',
-  },
+  // {
+  //   label: 'Zimbabwe',
+  //   value: 'ZWL',
+  // },
 ];
 export default currencies;
