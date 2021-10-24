@@ -21,7 +21,7 @@ export function convertCurrency(base, quote) {
         type: SUCCESS_CONVERTING_STATE,
         data,
       });
-      return true;
+      return { success: true, data };
     } catch (e) {
       const errMsg = e?.response?.data?.message || e?.message;
       // eslint-disable-next-line no-alert

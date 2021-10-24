@@ -1,6 +1,6 @@
 const currencies = [
   {
-    label: 'Select value',
+    label: 'Select Currency',
     value: '',
   },
   {

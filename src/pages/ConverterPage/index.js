@@ -55,9 +55,7 @@ const ConverterPage = () => {
   const [inputValue, setInputValue] = useState(' ');
   const [prevData, setPrevData] = useState({});
   const [quoteValue, setQuoteValue] = useState({});
-  const { success, data, converting } = useSelector(
-    (state) => state.converterState,
-  );
+  const { converting } = useSelector((state) => state.converterState);
 
   const { prevQuote, prevBase, prevAmount, prevResult } = prevData;
 
@@ -93,8 +91,8 @@ const ConverterPage = () => {
   }, [debAmount, base, quote]);
 
   const makeConversion = async (bas, quot) => {
-    const isSuccess = await convertCurrency(bas, quot)(dispatch);
-    if (!isSuccess) return;
+    const { success, data } = await convertCurrency(bas, quot)(dispatch);
+    if (!success) return;
 
     const rate = data?.result;
     const theQuot = quote || prevQuote;
