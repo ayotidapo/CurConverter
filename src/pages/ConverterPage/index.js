@@ -143,6 +143,7 @@ const ConverterPage = () => {
             label="Change From"
             onChange={handleChange}
             type="select"
+            data-testid="base-select"
           />
           <Input
             data={currencies}
@@ -152,12 +153,13 @@ const ConverterPage = () => {
             label="to"
             onChange={handleChange}
             type="select"
+            data-testid="quote-select"
           />
         </Card>
 
-        {converting && <Loader />}
+        {converting && <Loader data-testid="loader-div" />}
         {(quoteValue?.result || prevQuote) && !converting && (
-          <div className="result-div">
+          <div className="result-div" data-testid="result-div">
             <span className="pri-col">{base || prevBase}</span>{' '}
             {formatAmount(debAmount || prevAmount)}{' '}
             <small>is equivalent to</small>

@@ -29,7 +29,7 @@ const ErrorText = styled.div`
 `;
 
 const Input = (props) => {
-  const { error, defaultValue, label, curSign, data, ...rest } = props;
+  const { error, testId, defaultValue, label, curSign, data, ...rest } = props;
   if (props.type === 'select') {
     return (
       <InputWrapper>
@@ -47,7 +47,7 @@ const Input = (props) => {
 
   return (
     <InputWrapper>
-      <label>{label}</label>
+      <label htmlFor={props.id}>{label}</label>
       <div className="cur-sign">{curSign}</div>
       <SimpleInput {...rest} />
       <ErrorText>{error}</ErrorText>
