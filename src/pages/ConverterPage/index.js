@@ -79,14 +79,16 @@ const ConverterPage = () => {
   useEffect(() => {
     if (!success) return;
     const rate = data?.result;
-    const quoteAmount = rate[quote];
-    const result = quoteAmount * parseFloat(amount);
+    const theQuot = quote || prevQuote;
+    const quoteAmount = rate[theQuot];
+    const theAmt = debAmount || prevAmount;
+    const result = quoteAmount * parseFloat(theAmt);
     setQuoteValue({ result, cur: quote });
 
     const lsData = {
-      prevQuote: quote,
-      prevBase: base,
-      prevAmount: amount,
+      prevQuote: theQuot,
+      prevBase: base || prevBase,
+      prevAmount: theAmt,
       prevResult: result,
     };
     localStorage.lConvert = JSON.stringify(lsData);
@@ -96,9 +98,9 @@ const ConverterPage = () => {
     if (!localStorage.lConvert) return;
     const lsData = JSON.parse(localStorage.lConvert);
     setPrevData(lsData);
-    const formated = formatAmount(lsData?.prevAmount);
+    const formated = debAmount || formatAmount(lsData?.prevAmount);
     setInputValue(formated);
-  }, [debAmount, base, quote]);
+  }, []);
 
   useEffect(() => {
     const Amt = debAmount || prevAmount;
@@ -111,7 +113,7 @@ const ConverterPage = () => {
   const makeConversion = async (bas, quot) => {
     dispatch(convertCurrency(bas, quot));
   };
-  console.log(converting, '0p');
+
   return (
     <PageWrapper>
       <section>
@@ -140,7 +142,7 @@ const ConverterPage = () => {
 
           <Input
             data={currencies}
-            defaultValue={prevBase}
+            defaultValue={base || prevBase}
             id="base"
             name="base"
             label="Change From"
@@ -149,7 +151,7 @@ const ConverterPage = () => {
           />
           <Input
             data={currencies}
-            defaultValue={prevQuote}
+            defaultValue={quote || prevQuote}
             id="quote"
             name="quote"
             label="to"

@@ -22,7 +22,9 @@ const GlobalStyle = createGlobalStyle`
     .pri-col{
         color:var(--pri-color)
     }
-    
+    .logo{
+        color:var(--pri-color)
+    }
 	
 `;
 

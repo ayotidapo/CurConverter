@@ -25,7 +25,7 @@ const AppLayout = ({ children }) => {
   return (
     <AppWrapper>
       <AppTitle className="big-H txt-ctr" onClick={() => history.push('/')}>
-        My Currency Converter
+        <span className="logo">My Currency Converter</span>
       </AppTitle>
       <Main>{children}</Main>
     </AppWrapper>

@@ -392,10 +392,10 @@ const currencies = [
     label: 'Nigeria',
     value: 'NGN',
   },
-  {
-    label: 'Nicaragua',
-    value: 'NIO',
-  },
+  // {
+  //   label: 'Nicaragua',
+  //   value: 'NIO',
+  // },
   {
     label: 'Norwegian Krone',
     value: 'NOK',
@@ -574,10 +574,10 @@ const currencies = [
     label: 'Uzbekistan',
     value: 'UZS',
   },
-  {
-    label: 'Venezuela',
-    value: 'VEF',
-  },
+  // {
+  //   label: 'Venezuela',
+  //   value: 'VEF',
+  // },
   {
     label: 'Vietnam',
     value: 'VND',
