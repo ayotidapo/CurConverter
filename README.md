@@ -1,5 +1,4 @@
 CurConver is a currency converter app for latest currency exchange, built with React using fastForex API. 
-Note: You need to visit [fastforex to Get your API key](https://console.fastforex.io/auth/signin) and update it in the .env file
 
 ## To run the app
 
@@ -7,6 +6,9 @@ Note: You need to visit [fastforex to Get your API key](https://console.fastfore
 2. cd into the directory CurConverter
 3. Type npm install and press Enter to install the dependencies
 4. Type npm start to run the local server and visit localhost:3004 on your browser
+
+ Note: You need to visit [fastforex to Get your API key](https://console.fastforex.io/auth/signin) and update it in the .env file
+
 
 ## To deploy on heroku
 
