@@ -38,7 +38,7 @@ describe('how currentRates Page component works', () => {
       }),
     );
   });
-  it('renders the component without crash and takes snapshot', async () => {
+  it('should renders the component without crash and takes snapshot', async () => {
     const { asFragment } = renderWithRedux(<CurrentRatesPage {...cProps} />);
     expect(asFragment).toMatchSnapshot();
     expect(axiosMock.get).toHaveBeenCalledTimes(1);
@@ -48,7 +48,7 @@ describe('how currentRates Page component works', () => {
     );
   });
 
-  it('renders the loader while data changes and show  new content when dome', async () => {
+  it('should renders the loader while data changes and show  new content when dome', async () => {
     const { getByTestId } = renderWithRedux(<CurrentRatesPage {...cProps} />);
     const baseSelectInput = getByTestId('rates-base');
 

@@ -12,13 +12,13 @@ import ConverterPage from '../index';
 describe('how Converter Page component works', () => {
   afterEach(cleanup);
 
-  it('renders the component without crash and takes snapshot', async () => {
+  it('should renders the component without crash and takes snapshot', async () => {
     const { asFragment } = renderWithRedux(<ConverterPage />);
 
     expect(asFragment).toMatchSnapshot();
   });
 
-  it('makes an instant API call whenever input value changes', async () => {
+  it('should make an instant API call whenever input value changes', async () => {
     jest.useFakeTimers();
 
     axiosMock.get.mockImplementationOnce(() =>
