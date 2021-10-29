@@ -2,7 +2,6 @@ import { StrictMode } from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import { ToastContainer, Zoom } from 'react-toastify';
-import AppProvider from 'context/Providers/AppProvider';
 import 'react-toastify/dist/ReactToastify.min.css';
 import './index.scss';
 
@@ -20,9 +19,7 @@ ReactDOM.render(
       className="toast-container"
       toastClassName="dark-toast"
     />
-    <AppProvider>
       <App />
-    </AppProvider>
   </StrictMode>,
   document.getElementById('root'),
 );
